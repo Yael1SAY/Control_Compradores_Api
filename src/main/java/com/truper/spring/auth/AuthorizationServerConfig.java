@@ -21,7 +21,7 @@ import java.util.Arrays;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-    @Autowired//se inyecta de la clase SpringSecurityConfig
+    @Autowired//Se inyecta de la clase SpringSecurityConfig
     private BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
