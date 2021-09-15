@@ -11,7 +11,6 @@ INSERT INTO `compradores`(id_comprador, clave, password, nombre, apellido_patern
 Insert into roles (nombre_rol) values ("ROLE_USER");
 Insert into roles (nombre_rol) values ("ROLE_ADMIN");
 
-Insert into compradores_roles(id_comprador, id_rol) values (1,1);
 Insert into compradores_roles(id_comprador, id_rol) values (1,2);
 Insert into compradores_roles(id_comprador, id_rol) values (2,1);
 Insert into compradores_roles(id_comprador, id_rol) values (3,1);

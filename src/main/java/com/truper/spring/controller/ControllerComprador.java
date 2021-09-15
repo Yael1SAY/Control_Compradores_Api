@@ -19,7 +19,7 @@ public class ControllerComprador {
     @Autowired
     CompradorService compradorService;
 
-    @Secured("ROLE_ADMIN")
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @RequestMapping(value = "/", method = RequestMethod.GET)
     List<Comprador> obtenerCompradores(){
         List<Comprador> comprador = compradorService.obtenerCompradores();
@@ -27,7 +27,15 @@ public class ControllerComprador {
         return comprador;
     }
 
-    @Secured("ROLE_ADMIN")
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
+    @RequestMapping(value = "usuario/{claveComprador}", method = RequestMethod.GET)
+    Comprador obtenerUsuario(@PathVariable String claveComprador){
+        Comprador comprador = compradorService.obtenerUsuario(claveComprador);
+        LOG.info("compradores; " + comprador);
+        return comprador;
+    }
+
+    @Secured({"ROLE_ADMIN", })
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     Comprador obtenerCompradorId(@PathVariable long id){
         return compradorService.obtenerCompradorId(id);

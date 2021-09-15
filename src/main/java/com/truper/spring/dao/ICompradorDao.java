@@ -11,6 +11,8 @@ public interface ICompradorDao {
 
     List<Comprador> obtenerCompradores();
 
+    Comprador obtenerUsuario(String claveComprador);
+
     Comprador obtenerCompradorId(long id);
 
     Comprador registrarComprador(Comprador comprador);

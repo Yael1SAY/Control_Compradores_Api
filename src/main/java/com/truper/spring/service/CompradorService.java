@@ -24,10 +24,14 @@ public class CompradorService {
         List<Comprador> list = direccionDao.obtenerCompradores();
         return list;
     }
+    public Comprador obtenerUsuario(String claveComprador){
+        Comprador comprador = direccionDao.obtenerUsuario(claveComprador);
+        return comprador;
+    }
 
     public Comprador obtenerCompradorId(long id){
         Comprador comprador = direccionDao.obtenerCompradorId(id);
-        if (comprador.isEstatus()){
+        if (!comprador.isEstatus()){
             return null;
         }
         return comprador;

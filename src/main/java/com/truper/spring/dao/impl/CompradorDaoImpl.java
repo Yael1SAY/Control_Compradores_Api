@@ -27,6 +27,13 @@ public class CompradorDaoImpl implements ICompradorDao {
     }
 
     @Override
+    public Comprador obtenerUsuario(String claveComprador) {
+        final String USUARIO = "From Comprador c where c.estatus = true and c.clave = :clave";
+        return entityManager.createQuery(USUARIO, Comprador.class).setParameter("clave", claveComprador)
+                .getSingleResult();
+    }
+
+    @Override
     public Comprador obtenerCompradorId(long id) {
         return entityManager.find(Comprador.class, id);
     }
